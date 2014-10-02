@@ -7,7 +7,7 @@ The API would be created from the class model as follows:
 
 ``` CSharp
 // Root /
-[NoStop]
+[NoEndpoint]
 public sealed class Root
 {
     // /players will try to return the Players object,
@@ -19,8 +19,8 @@ public sealed class Root
     public Settings Settings { get; internal set; }
 }
 
-// NoStop tells it that it can't be returned directly
-[NoStop]
+// NoEndpoint tells it that it can't be returned directly (i.e. it isn't an endpoint)
+[NoEndpoint]
 public sealed partial class Players
 {
     // Key = player.Login
