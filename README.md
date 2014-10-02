@@ -9,7 +9,8 @@ The API would be created from the class model as follows:
 // Root /
 public sealed class Root
 {
-    // /players will try to return the Players object, but it can't because of the NoStop attribute on the class
+    // /players will try to return the Players object,
+    // but it can't because of the NoStop attribute on the class
     public Players Players { get; private set; }
     
     // /settings will return the Settings object - public GET and authorized POST
