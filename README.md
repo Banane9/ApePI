@@ -20,7 +20,7 @@ public sealed class Root
 
 // NoStop tells it that it can't be returned directly
 [NoStop]
-public sealed class Players
+public sealed partial class Players
 {
     // Key = player.Login
     private Dictionary<string, Player> playersL;
@@ -69,3 +69,17 @@ public sealed class Settings
 ```
 
 All parts of the path that are based on the classes are case insensitive and parameters depend on their implementation.
+
+Query/Post parameters could be used for functions:
+
+``` CSharp
+public sealed partial class Players
+{
+    // /players/all?offset=0&length=20 will return the first 20 players - public GET (authorized GET when internal)
+    // POST would be PostAll, etc.
+    public IEnumerable<Player> GetAll(uint offset, uint length)
+    {
+        return playersI.Skip(offset).Take(length);
+    }
+}
+```
