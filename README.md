@@ -7,6 +7,7 @@ The API would be created from the class model as follows:
 
 ``` CSharp
 // Root /
+[NoStop]
 public sealed class Root
 {
     // /players will try to return the Players object,
